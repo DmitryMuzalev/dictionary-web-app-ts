@@ -1,0 +1,18 @@
+Challenge is to build out this dictionary web app using the Dictionary API and get it looking as close to the design as possible.
+Dictionary API - https://dictionaryapi.dev/
+
+Users should be able to:
+
+- Search for words using the input field
+- See the Free Dictionary API's response for the searched word 
+- See a form validation message when trying to submit a blank form (Whoops, can't be empty...)
+Play the audio file for a word when it's available
+Switch between serif, sans serif, and monospace fonts
+Switch between light and dark themes
+View the optimal layout for the interface depending on their device's screen size
+See hover and focus states for all interactive elements on the page
+Bonus: Have the correct color scheme chosen for them based on their computer preferences. Hint: Research prefers-color-scheme in CSS.
+
+
+No definitions found
+Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at a later time or head to the web instead

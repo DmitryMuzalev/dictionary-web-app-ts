@@ -19,6 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "component": "generate-react component",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -39,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "generate-react-cli": "^8.4.0",
+    "sass": "^1.70.0"
   }
 }
