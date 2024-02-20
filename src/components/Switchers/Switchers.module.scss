@@ -1,0 +1,22 @@
+@import "../../styles/functions.scss";
+
+:global {
+  body[data-theme="light"] {
+    --bg-divider: var(--neutral-200);
+  }
+  body[data-theme="dark"] {
+    --bg-divider: var(--neutral-600);
+  }
+}
+
+.switchers {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+
+  &Divider {
+    height: toRem(30);
+    width: 2px;
+    background-color: var(--bg-divider);
+  }
+}

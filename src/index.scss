@@ -6,6 +6,11 @@
   margin: 0;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 /* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&family=Inter:slnt,wght@-10..0,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
 @import "./styles/icon-font";
@@ -24,8 +29,38 @@
   --neutral-800: hsl(0, 0%, 2%); // #050505
   --neutral-900: hsl(0, 0%, 0%); // #000000
 
-  --accent-300: hsl(274, 82%, 60%); // #A445ED
+  --accent-300: hsl(274, 82%, 60%); // #a445ed
   --accent-400: hsl(274, 82%, 50%); // #8F19E8
 
   --error-400: hsl(0, 100%, 66%); // #FF5252
+}
+
+body[data-theme="light"] {
+  background-color: var(--neutral-50);
+  color: var(--neutral-600);
+}
+
+body[data-theme="dark"] {
+  background-color: var(--neutral-800);
+  color: var(--neutral-50);
+}
+
+body[data-font="serif"] {
+  --f-family: "Lora", serif;
+}
+
+body[data-font="sans serif"] {
+  --f-family: "Inter", sans-serif;
+}
+
+body[data-font="mono"] {
+  --f-family: "Inconsolata", monospace;
+}
+
+body {
+  font-family: var(--f-family);
+}
+
+.error {
+  color: var(--error-400);
 }

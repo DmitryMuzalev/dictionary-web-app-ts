@@ -1,5 +1,14 @@
 @import "../../styles/functions.scss";
 
+:global {
+  body[data-theme="light"] {
+    --color-theme-switcher: var(--neutral-400);
+  }
+  body[data-theme="dark"] {
+    --color-theme-switcher: var(--accent-400);
+  }
+}
+
 .themeSwitcher {
   cursor: pointer;
   display: flex;
@@ -7,11 +16,7 @@
   column-gap: 1.25rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  color: var(--neutral-400);
-
-  &Checked {
-    color: var(--accent-400);
-  }
+  color: var(--color-theme-switcher);
 
   &:hover {
     color: var(--accent-300);
@@ -34,10 +39,6 @@
     background-color: var(--accent-300);
   }
 
-  input:checked + &Slider {
-    background-color: var(--accent-400);
-  }
-
   input:checked + &Slider:before {
     -webkit-transform: translate(toRem(20), -50%);
     -ms-transform: translate(toRem(20), -50%);
@@ -47,7 +48,7 @@
   &Slider {
     position: absolute;
     inset: 0;
-    background-color: var(--neutral-400);
+    background-color: var(--color-theme-switcher);
     -webkit-transition: 0.3s;
     transition: 0.3s;
     border-radius: toRem(10);
@@ -61,7 +62,7 @@
       left: toRem(3);
       transform: translateY(-50%);
 
-      background-color: white;
+      background-color: var(--neutral-50);
       -webkit-transition: 0.4s;
       transition: 0.4s;
       border-radius: 50%;

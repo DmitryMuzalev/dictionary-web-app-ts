@@ -1,1 +1,9 @@
-.container {}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.scss";
-import { clsx } from "clsx";
 
 interface ThemeSwitcherProps {}
 
@@ -11,13 +10,8 @@ export const ThemeSwitcher = ({}: ThemeSwitcherProps) => {
     document.body.setAttribute("data-theme", isDark ? "dark" : "light");
   }, [isDark]);
 
-  const themeSwitcherClasses = clsx(
-    styles.themeSwitcher,
-    isDark && styles.themeSwitcherChecked
-  );
-
   return (
-    <label htmlFor="themeSwitcher" className={themeSwitcherClasses}>
+    <label htmlFor="themeSwitcher" className={styles.themeSwitcher}>
       <div className={styles.switcher}>
         <input
           type="checkbox"
