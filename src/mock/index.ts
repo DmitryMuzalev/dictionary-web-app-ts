@@ -1,6 +1,6 @@
-import { DictionaryWord } from "types";
+import { DictionaryWord, DictionaryNotFoundWord } from "types";
 
-const defaultWord: DictionaryWord = {
+export const defaultWord: DictionaryWord = {
   word: "hello",
   phonetics: [
     {
@@ -21,8 +21,8 @@ const defaultWord: DictionaryWord = {
       definitions: [
         {
           definition: '"Hello!" or an equivalent greeting.',
-          synonyms: [],
-          antonyms: [],
+          synonyms: ["link_1", "link_2"],
+          antonyms: ["link_3", "link_4"],
         },
       ],
       synonyms: ["greeting"],
@@ -42,8 +42,25 @@ const defaultWord: DictionaryWord = {
         {
           definition:
             "A greeting (salutation) said when meeting someone or acknowledging someone’s arrival or presence.",
-          synonyms: [],
-          antonyms: [],
+          synonyms: [
+            "link_1",
+            "link_2",
+            "link_1",
+            "link_2",
+            "link_1",
+            "link_2",
+            "link_1",
+            "link_2",
+            "link_1",
+            "link_2",
+            "link_1",
+            "link_2",
+            "link_1",
+            "link_2",
+            "link_1",
+            "link_2",
+          ],
+          antonyms: ["link_3", "link_4"],
           example: "Hello, everyone.",
         },
         {
@@ -83,4 +100,12 @@ const defaultWord: DictionaryWord = {
     url: "https://creativecommons.org/licenses/by-sa/3.0",
   },
   sourceUrls: ["https://en.wiktionary.org/wiki/hello"],
+};
+
+export const defaultNotFoundWord: DictionaryNotFoundWord = {
+  title: "No Definitions Found",
+  message:
+    "Sorry pal, we couldn't find definitions for the word you were looking for.",
+  resolution:
+    "You can try the search again at later time or head to the web instead.",
 };

@@ -1,0 +1,18 @@
+:global {
+  body[data-theme="light"] {
+    --line-bg: var(--neutral-200);
+  }
+  body[data-theme="dark"] {
+    --line-bg: var(--neutral-500);
+  }
+}
+
+.word {
+  &Meanings {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.5rem;
+    margin-top: 2.5rem;
+    border-bottom: 1px solid var(--line-bg);
+  }
+}

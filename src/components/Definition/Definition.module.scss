@@ -1,0 +1,24 @@
+@import "../../styles/functions";
+
+.definition {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: toRem(18);
+  padding-left: toRem(30);
+  span {
+    display: inline-block;
+    color: var(--neutral-400);
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: 0;
+    background-color: var(--accent-300);
+    border-radius: 50%;
+    width: toRem(6);
+    height: toRem(6);
+  }
+}

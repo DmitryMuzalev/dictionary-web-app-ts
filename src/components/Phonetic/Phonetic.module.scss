@@ -1,0 +1,16 @@
+.phonetic {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &Word {
+    h2 {
+      font-size: 4rem;
+    }
+    p {
+      font-family: "Inter", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--accent-300);
+    }
+  }
+}

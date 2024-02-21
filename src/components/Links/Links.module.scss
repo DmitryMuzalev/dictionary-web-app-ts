@@ -1,0 +1,19 @@
+.links {
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+  &Wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+  }
+  &Item,
+  &ItemSmall {
+    font-weight: 600;
+    color: var(--accent-300);
+  }
+
+  &ItemSmall {
+    font-size: 1rem;
+  }
+}

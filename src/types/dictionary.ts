@@ -1,34 +1,40 @@
-type License = {
+type LicenseType = {
   name: string;
   url: string;
 };
 
-type Phonetics = {
+type PhoneticType = {
   audio: string;
   text: string;
   sourceUrl?: string;
-  license?: License;
+  license?: LicenseType;
 };
 
-type Definitions = {
+export type DefinitionType = {
   definition: string;
   example?: string;
   synonyms: string[];
   antonyms: string[];
 };
 
-type Meaning = {
+export type MeaningType = {
   partOfSpeech: string;
-  definitions: Definitions[];
+  definitions: DefinitionType[];
   synonyms: string[];
   antonyms: string[];
 };
 
 export type DictionaryWord = {
   word: string;
-  phonetics: Phonetics[];
-  meanings: Meaning[];
+  phonetics: PhoneticType[];
+  meanings: MeaningType[];
   phonetic?: string;
   sourceUrls?: string[];
-  license?: License;
+  license?: LicenseType;
+};
+
+export type DictionaryNotFoundWord = {
+  title: string;
+  message: string;
+  resolution: string;
 };
