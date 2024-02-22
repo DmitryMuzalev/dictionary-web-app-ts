@@ -17,6 +17,24 @@ export const Word = ({}: WordProps) => {
           return <Meaning key={index} {...meaning} />;
         })}
       </div>
+
+      {sourceUrls && !!sourceUrls.length && (
+        <div className={styles.wordSource}>
+          <h3>Source</h3>
+          <ul>
+            {sourceUrls.map((url, index) => {
+              return (
+                <li key={index}>
+                  <a href={url} target="_blank">
+                    {url}
+                  </a>
+                  <i className="icon-new-window"></i>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,9 +1,13 @@
+@import "../../styles/functions.scss";
+
 :global {
   body[data-theme="light"] {
     --line-bg: var(--neutral-200);
+    --link-color: var(--neutral-500);
   }
   body[data-theme="dark"] {
     --line-bg: var(--neutral-500);
+    --link-color: var(--neutral-200);
   }
 }
 
@@ -14,5 +18,34 @@
     row-gap: 2.5rem;
     margin-top: 2.5rem;
     border-bottom: 1px solid var(--line-bg);
+  }
+
+  &Source {
+    display: flex;
+    gap: 1.5rem;
+    font-size: toRem(14);
+    padding-top: 1.5rem;
+
+    h3 {
+      font-size: inherit;
+      color: var(--neutral-400);
+      font-weight: 400;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: underline;
+    }
+
+    i {
+      margin-left: 0.5rem;
+    }
   }
 }
