@@ -3,7 +3,7 @@ type LicenseType = {
   url: string;
 };
 
-type PhoneticType = {
+export type PhoneticType = {
   audio: string;
   text: string;
   sourceUrl?: string;

@@ -1,15 +1,15 @@
-import { DictionaryWord } from "types";
+import { DictionaryWord, PhoneticType } from "types";
 import styles from "./Phonetic.module.scss";
 import playIcon from "assets/icon-play.svg";
 
 interface PhoneticProps extends Pick<DictionaryWord, "word" | "phonetics"> {}
 
 export const Phonetic = ({ word, phonetics }: PhoneticProps) => {
-  const { audio, text } = phonetics[0];
-
-  const audioObj = new Audio(audio);
+  //! Сделать проверку на наличии транскрипции и аудио
+  const { audio, text } = phonetics.find((p) => p.audio !== "") as PhoneticType;
 
   const handlerPlay = () => {
+    const audioObj = new Audio(audio);
     audioObj.play();
   };
 

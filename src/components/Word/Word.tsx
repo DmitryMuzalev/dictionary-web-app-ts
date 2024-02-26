@@ -1,13 +1,15 @@
 import { Phonetic } from "components/Phonetic/Phonetic";
 import styles from "./Word.module.scss";
 
-import { defaultWord } from "mock";
 import { Meaning } from "components/Meaning/Meaning";
+import { DictionaryWord } from "types";
 
-interface WordProps {}
+interface WordProps {
+  data: DictionaryWord;
+}
 
-export const Word = ({}: WordProps) => {
-  const { meanings, phonetics, word, sourceUrls } = defaultWord;
+export const Word = ({ data }: WordProps) => {
+  const { meanings, phonetics, word, sourceUrls } = data;
 
   return (
     <div className={styles.word}>
