@@ -13,10 +13,11 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  column-gap: 1.25rem;
+  column-gap: toRem(18);
   -webkit-transition: 0.3s;
   transition: 0.3s;
   color: var(--color-theme-switcher);
+  font-size: 1.25rem;
 
   &:hover {
     color: var(--accent-300);

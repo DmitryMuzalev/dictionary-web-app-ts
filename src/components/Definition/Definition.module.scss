@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  font-size: toRem(18);
-  padding-left: toRem(30);
+  font-size: toRem(15);
+  padding-left: 1.5rem;
   span {
     display: inline-block;
     color: var(--neutral-400);
@@ -20,5 +20,10 @@
     border-radius: 50%;
     width: toRem(6);
     height: toRem(6);
+  }
+  @media (min-width: 479px) {
+    padding-left: toRem(30);
+    gap: 1rem;
+    font-size: toRem(18);
   }
 }

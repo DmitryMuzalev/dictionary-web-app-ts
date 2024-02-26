@@ -66,5 +66,9 @@ body {
 }
 
 .error {
+  font-size: 0.875rem;
   color: var(--error-400);
+  @media (min-width: 479px) {
+    font-size: 1rem;
+  }
 }

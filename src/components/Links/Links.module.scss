@@ -1,7 +1,15 @@
+@import "../../styles/functions.scss";
+
 .links {
   display: flex;
   align-items: start;
   gap: 2rem;
+
+  h4,
+  h5 {
+    margin-bottom: 0;
+  }
+
   &Wrap {
     display: flex;
     flex-wrap: wrap;
@@ -13,7 +21,18 @@
     color: var(--accent-300);
   }
 
+  &Item {
+    font-size: toRem(15);
+  }
+
   &ItemSmall {
-    font-size: 1rem;
+    font-size: toRem(14);
+  }
+
+  @media (min-width: 479px) {
+    &Item,
+    &ItemSmall {
+      font-size: 1rem;
+    }
   }
 }

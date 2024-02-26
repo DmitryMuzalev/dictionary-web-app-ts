@@ -4,13 +4,31 @@
   justify-content: space-between;
   &Word {
     h2 {
-      font-size: 4rem;
+      font-size: 2rem;
     }
     p {
       font-family: "Inter", sans-serif;
-      font-size: 1.5rem;
+      font-size: 1rem;
       font-weight: 400;
       color: var(--accent-300);
+    }
+  }
+  &Play {
+    cursor: pointer;
+    width: 50px;
+  }
+
+  @media (min-width: 479px) {
+    &Word {
+      h2 {
+        font-size: 4rem;
+      }
+      p {
+        font-size: 1.5rem;
+      }
+    }
+    &Play {
+      width: 75px;
     }
   }
 }

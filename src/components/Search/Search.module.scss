@@ -25,12 +25,11 @@
   position: relative;
 
   &TextField {
-    font-size: toRem(22);
+    font-size: 1rem;
+    padding: 1rem 4rem 1rem 1.5rem;
     font-family: inherit;
-    font-weight: 600;
+    font-weight: 700;
     width: 100%;
-    height: 3em;
-    padding: 0 3em 0 1em;
     background-color: var(--search-bg);
     color: var(--search-color);
     border-radius: 0.75rem;
@@ -46,6 +45,11 @@
     &::placeholder {
       color: var(--search-placeholder-color);
     }
+
+    @media (min-width: 479px) {
+      font-size: 1.25rem;
+      padding: 1.25rem 4rem 1.25rem 1.5rem;
+    }
   }
 
   &Button {
@@ -57,7 +61,7 @@
     font-size: inherit;
     height: 100%;
     right: 0;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
     font-size: toRem(18);
   }
 }

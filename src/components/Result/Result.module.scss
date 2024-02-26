@@ -1,4 +1,8 @@
 .result {
   width: 100%;
-  padding-top: 50px; //! временно
+  margin-top: 1.75rem;
+
+  @media (min-width: 479px) {
+    margin-top: 3.5rem;
+  }
 }

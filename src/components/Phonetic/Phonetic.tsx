@@ -1,6 +1,6 @@
 import { DictionaryWord } from "types";
 import styles from "./Phonetic.module.scss";
-import { ReactComponent as PlayIcon } from "assets/icon-play.svg";
+import playIcon from "assets/icon-play.svg";
 
 interface PhoneticProps extends Pick<DictionaryWord, "word" | "phonetics"> {}
 
@@ -19,7 +19,12 @@ export const Phonetic = ({ word, phonetics }: PhoneticProps) => {
         <h2>{word}</h2>
         <p>{text}</p>
       </div>
-      <PlayIcon onClick={handlerPlay} style={{ cursor: "pointer" }} />
+      <img
+        className={styles.phoneticPlay}
+        onClick={handlerPlay}
+        src={playIcon}
+        alt="play"
+      />
     </div>
   );
 };
