@@ -65,6 +65,13 @@ body {
   font-family: var(--f-family);
 }
 
+main {
+  margin-top: 1.75rem;
+  @media (min-width: 479px) {
+    margin-top: 3.5rem;
+  }
+}
+
 .error {
   font-size: 0.875rem;
   color: var(--error-400);

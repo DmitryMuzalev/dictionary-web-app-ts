@@ -9,11 +9,11 @@ interface WordProps {
 }
 
 export const Word = ({ data }: WordProps) => {
-  const { meanings, phonetics, word, sourceUrls } = data;
+  const { word, phonetic, phonetics, meanings, sourceUrls } = data;
 
   return (
     <div className={styles.word}>
-      <Phonetic word={word} phonetics={phonetics} />
+      <Phonetic word={word} phonetics={phonetics} phonetic={phonetic} />
       <div className={styles.wordMeanings}>
         {meanings.map((meaning, index) => {
           return <Meaning key={index} {...meaning} />;

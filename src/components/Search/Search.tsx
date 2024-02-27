@@ -1,7 +1,7 @@
+import { useState } from "react";
 import styles from "./Search.module.scss";
 
 interface SearchProps {
-  hasError: boolean;
   onSubmit: (v: string) => void;
 }
 
@@ -9,13 +9,18 @@ type FormInputs = {
   word: HTMLInputElement;
 };
 
-export const Search = ({ hasError, onSubmit }: SearchProps) => {
+export const Search = ({ onSubmit }: SearchProps) => {
+  const [isEmptyField, setIsEmptyField] = useState(false);
+
   const handlerSubmit = (e: React.FormEvent<HTMLFormElement & FormInputs>) => {
     e.preventDefault();
-    const value = e.currentTarget.word.value;
+    const value = e.currentTarget.word.value.trim();
     if (value) {
       onSubmit(value);
+      isEmptyField && setIsEmptyField(false);
       e.currentTarget.reset();
+    } else {
+      setIsEmptyField(true);
     }
   };
   return (
@@ -31,7 +36,7 @@ export const Search = ({ hasError, onSubmit }: SearchProps) => {
           <i className="icon-search"></i>
         </button>
       </div>
-      {hasError && <p className="error">Whoops, can't be empty...</p>}
+      {isEmptyField && <p className="error">Whoops, can't be empty...</p>}
     </form>
   );
 };
