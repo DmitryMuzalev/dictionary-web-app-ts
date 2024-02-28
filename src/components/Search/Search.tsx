@@ -28,7 +28,9 @@ export const Search = ({ onSubmit }: SearchProps) => {
       <div className={styles.search}>
         <input
           name="word"
-          className={styles.searchTextField}
+          className={`${styles.searchTextField}  ${
+            isEmptyField ? styles.searchTextFieldError : ""
+          }`}
           type="text"
           placeholder="Search for any word..."
         />
