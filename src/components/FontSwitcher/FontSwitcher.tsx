@@ -31,14 +31,16 @@ export const FontSwitcher = ({}: FontSwitcherProps) => {
         <ul className={styles.fontSwitcherOption}>
           {option.map((op, i) => {
             return (
-              <li
-                key={i}
-                onClick={() => {
-                  setSelectFont(op);
-                  setIsOpen(false);
-                }}
-              >
-                {op}
+              <li className={selectFont === op ? styles.activeFont : ""}>
+                <button
+                  key={i}
+                  onClick={() => {
+                    setSelectFont(op);
+                    setIsOpen(false);
+                  }}
+                >
+                  {op}
+                </button>
               </li>
             );
           })}
