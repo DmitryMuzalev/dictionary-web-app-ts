@@ -10,7 +10,7 @@ type ContextProviderProps = {
 };
 
 export const ContextProvider = (props: ContextProviderProps) => {
-  const BASE_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+  const BASE_URL = "https://api.dictionaaryapi.dev/api/v2/entries/en/";
 
   const [word, setWord] = useState<DictionaryWord | null>(null);
   const [notFound, setNotFound] = useState<DictionaryNotFoundWord | null>(null);
@@ -18,12 +18,12 @@ export const ContextProvider = (props: ContextProviderProps) => {
   const fetchWord = async (word: string) => {
     const url = BASE_URL + word;
     const response = await fetch(url);
+    console.log(response);
     const result = (await response.json()) as
       | DictionaryWord[]
       | DictionaryNotFoundWord;
 
     const data = Array.isArray(result) ? result[0] : result;
-
     if (isWord(data)) {
       notFound && setNotFound(null);
       setWord(data);

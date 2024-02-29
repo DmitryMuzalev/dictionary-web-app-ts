@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.scss";
 
-interface ThemeSwitcherProps {}
-
-export const ThemeSwitcher = ({}: ThemeSwitcherProps) => {
+export const ThemeSwitcher = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {

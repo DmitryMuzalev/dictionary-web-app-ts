@@ -3,9 +3,11 @@
 :global {
   body[data-theme="light"] {
     --color-theme-switcher: var(--neutral-400);
+    --color-focus-visible: var(--neutral-900);
   }
   body[data-theme="dark"] {
     --color-theme-switcher: var(--accent-400);
+    --color-focus-visible: var(--neutral-50);
   }
 }
 
@@ -41,6 +43,12 @@
     background-color: var(--accent-300);
   }
 
+  input:focus-visible + &Slider {
+    -webkit-box-shadow: 0px 0px 0px 1px var(--color-focus-visible);
+    -moz-box-shadow: 0px 0px 0px 1px var(--color-focus-visible);
+    box-shadow: 0px 0px 0px 1px var(--color-focus-visible);
+  }
+
   input:checked + &Slider:before {
     -webkit-transform: translate(toRem(20), -50%);
     -ms-transform: translate(toRem(20), -50%);
@@ -51,8 +59,8 @@
     position: absolute;
     inset: 0;
     background-color: var(--color-theme-switcher);
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
+    transition: transform 0.3s, background-color 0.3s;
+    -webkit-transition: transform 0.3s, background-color 0.3s;
     border-radius: toRem(10);
 
     &::before {
