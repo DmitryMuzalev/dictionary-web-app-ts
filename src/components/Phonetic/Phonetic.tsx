@@ -1,6 +1,5 @@
 import { DictionaryWord } from "types";
 import styles from "./Phonetic.module.scss";
-import playIcon from "assets/play.svg";
 
 interface PhoneticProps
   extends Pick<DictionaryWord, "word" | "phonetic" | "phonetics"> {}

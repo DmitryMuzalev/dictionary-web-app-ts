@@ -2,9 +2,7 @@ import styles from "./Header.module.scss";
 import { ReactComponent as IconLogo } from "assets/logo.svg";
 import { Switchers } from "components/Switchers/Switchers";
 
-interface HeaderProps {}
-
-export const Header = ({}: HeaderProps) => (
+export const Header = () => (
   <header className={styles.header}>
     <IconLogo />
     <Switchers />
