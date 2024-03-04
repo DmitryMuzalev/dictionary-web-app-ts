@@ -10,26 +10,39 @@ type ContextProviderProps = {
 };
 
 export const ContextProvider = (props: ContextProviderProps) => {
-  const BASE_URL = "https://api.dictionaaryapi.dev/api/v2/entries/en/";
+  const BASE_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
   const [word, setWord] = useState<DictionaryWord | null>(null);
   const [notFound, setNotFound] = useState<DictionaryNotFoundWord | null>(null);
 
   const fetchWord = async (word: string) => {
     const url = BASE_URL + word;
-    const response = await fetch(url);
-    console.log(response);
-    const result = (await response.json()) as
-      | DictionaryWord[]
-      | DictionaryNotFoundWord;
 
-    const data = Array.isArray(result) ? result[0] : result;
-    if (isWord(data)) {
-      notFound && setNotFound(null);
-      setWord(data);
-    } else {
-      setWord(null);
-      setNotFound(data);
+    try {
+      const response = await fetch(url);
+      if (response.ok || response.status === 404) {
+        const result = (await response.json()) as
+          | DictionaryWord[]
+          | DictionaryNotFoundWord;
+
+        const data = Array.isArray(result) ? result[0] : result;
+        if (isWord(data)) {
+          notFound && setNotFound(null);
+          setWord(data);
+        } else {
+          setWord(null);
+          setNotFound(data);
+        }
+      } else {
+        const message = `An error has occured: ${response.status}`;
+        throw new Error(message);
+      }
+    } catch (error) {
+      let errorMessage = "Failed to do something exceptional";
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+      alert("Error message: " + errorMessage);
     }
   };
 
