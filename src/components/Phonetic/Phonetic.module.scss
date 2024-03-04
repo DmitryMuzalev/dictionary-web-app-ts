@@ -5,17 +5,39 @@
   &Word {
     h2 {
       font-size: 2rem;
+      margin-bottom: 0.5rem;
     }
     p {
       font-family: "Inter", sans-serif;
       font-size: 1rem;
       font-weight: 400;
-      color: var(--accent-300);
     }
   }
-  &Play {
+
+  &PlayButton {
     cursor: pointer;
+    position: relative;
+    border: none;
     width: 50px;
+    height: 50px;
+    background-color: var(--accent-200);
+    border-radius: 50%;
+    font-size: 1.3rem;
+    color: var(--accent-400);
+    flex-shrink: 0;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 52%;
+      transform: translate(-50%, -50%);
+    }
+
+    &:disabled {
+      background-color: var(--neutral-200);
+      color: var(--neutral-300);
+      cursor: not-allowed;
+    }
   }
 
   @media (min-width: 479px) {
@@ -27,8 +49,9 @@
         font-size: 1.5rem;
       }
     }
-    &Play {
+    &PlayButton {
       width: 75px;
+      height: 75px;
     }
   }
 }

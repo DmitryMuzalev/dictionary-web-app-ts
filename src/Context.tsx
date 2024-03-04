@@ -27,6 +27,8 @@ export const ContextProvider = (props: ContextProviderProps) => {
 
         const data = Array.isArray(result) ? result[0] : result;
         if (isWord(data)) {
+          console.log(data);
+
           notFound && setNotFound(null);
           setWord(data);
         } else {

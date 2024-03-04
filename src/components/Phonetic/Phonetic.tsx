@@ -1,6 +1,6 @@
 import { DictionaryWord } from "types";
 import styles from "./Phonetic.module.scss";
-import playIcon from "assets/icon-play.svg";
+import playIcon from "assets/play.svg";
 
 interface PhoneticProps
   extends Pick<DictionaryWord, "word" | "phonetic" | "phonetics"> {}
@@ -20,14 +20,18 @@ export const Phonetic = ({ word, phonetic, phonetics }: PhoneticProps) => {
     <div className={styles.phonetic}>
       <div className={styles.phoneticWord}>
         <h2>{word}</h2>
-        <p>{text || ""}</p>
+        <p style={{ color: text ? "var(--accent-300)" : "var(--neutral-300)" }}>
+          {text || "transcription not found"}
+        </p>
       </div>
-      <img
-        className={styles.phoneticPlay}
+      <button
         onClick={handlerPlay}
-        src={playIcon}
-        alt="play"
-      />
+        className={styles.phoneticPlayButton}
+        disabled={!audio}
+        title={!audio ? "Audio not found" : "Play"}
+      >
+        <i className="icon-play"></i>
+      </button>
     </div>
   );
 };

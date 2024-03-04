@@ -1,11 +1,11 @@
 @font-face {
   font-family: "icon-font";
-  src: url("../assets/icon-font/icon-font.eot?dybzl0");
-  src: url("../assets/icon-font/icon-font.eot?dybzl0#iefix")
+  src: url("../assets/icon-font/icon-font.eot?j5ftr9");
+  src: url("../assets/icon-font/icon-font.eot?j5ftr9#iefix")
       format("embedded-opentype"),
-    url("../assets/icon-font/icon-font.ttf?dybzl0") format("truetype"),
-    url("../assets/icon-font/icon-font.woff?dybzl0") format("woff"),
-    url("../assets/icon-font/icon-font.svg?dybzl0#icon-font") format("svg");
+    url("../assets/icon-font/icon-font.ttf?j5ftr9") format("truetype"),
+    url("../assets/icon-font/icon-font.woff?j5ftr9") format("woff"),
+    url("../assets/icon-font/icon-font.svg?j5ftr9#icon-font") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -28,14 +28,17 @@
 }
 
 .icon-arrow-down:before {
-  content: "\e902";
-}
-.icon-search:before {
-  content: "\e903";
-}
-.icon-new-window:before {
-  content: "\e901";
+  content: "\e900";
 }
 .icon-moon:before {
-  content: "\e900";
+  content: "\e901";
+}
+.icon-new-window:before {
+  content: "\e902";
+}
+.icon-play:before {
+  content: "\e903";
+}
+.icon-search:before {
+  content: "\e904";
 }
